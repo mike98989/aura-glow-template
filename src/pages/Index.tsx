@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BookOpen, Users, Award, TrendingUp, Play, Star } from "lucide-react";
 
@@ -54,9 +55,30 @@ const Index = () => {
                 <Play className="w-5 h-5 mr-2" />
                 Start Learning
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 hover:bg-primary/10">
-                Watch Demo
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="lg" className="text-lg px-8 border-primary/20 hover:bg-primary/10">
+                    Watch Demo
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>EduTech Platform Demo</DialogTitle>
+                    <DialogDescription>
+                      Discover how our platform can transform your learning experience.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="flex items-center justify-center p-6 bg-muted/50 rounded-lg">
+                    <div className="text-center">
+                      <Play className="w-16 h-16 mx-auto mb-4 text-primary" />
+                      <p className="text-muted-foreground mb-4">Demo video coming soon!</p>
+                      <p className="text-sm text-muted-foreground">
+                        Experience our interactive courses, community features, and progress tracking.
+                      </p>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>
